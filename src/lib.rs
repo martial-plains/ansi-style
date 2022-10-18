@@ -381,7 +381,7 @@ impl Style {
     }
 
     pub fn stylize(&self, text: &str) -> String {
-        format!("{self}{text};{}", Self::reset())
+        format!("{self}{text}{}", Self::reset())
     }
 
     fn is_default(&self) -> bool {
@@ -401,14 +401,14 @@ impl Display for Style {
 
         write!(f, "\x1B[")?;
 
-        let mut written_anything = false;
+        let mut written = false;
 
         {
             let mut write_char = |c| {
-                if written_anything {
+                if written {
                     write!(f, ";")?;
                 }
-                written_anything = true;
+                written = true;
                 write!(f, "{}", c)?;
                 Ok(())
             };
@@ -416,24 +416,31 @@ impl Display for Style {
             if self.bold {
                 write_char('1')?
             }
+
             if self.dim {
                 write_char('2')?
             }
+
             if self.italic {
                 write_char('3')?
             }
+
             if self.underline {
                 write_char('4')?
             }
+
             if self.blink {
                 write_char('5')?
             }
+
             if self.inverse {
                 write_char('7')?
             }
+
             if self.hidden {
                 write_char('8')?
             }
+
             if self.strikethrough {
                 write_char('9')?
             }
@@ -444,15 +451,19 @@ impl Display for Style {
         }
 
         if let Some(color) = self.bg_color {
-            if written_anything {
+            if written {
                 write!(f, ";{}", color)?;
+            } else {
+                write!(f, "{}", color)?;
+                written = true;
             }
-            written_anything = true;
         }
 
         if let Some(color) = self.color {
-            if written_anything {
+            if written {
                 write!(f, ";{}", color)?;
+            } else {
+                write!(f, "{}", color)?;
             }
         }
 
