@@ -1,0 +1,9 @@
+[package]
+name = "ansi-style"
+version = "1.0.0"
+edition = "2021"
+authors = ["Allister Isaiah Harvey <a.i.harvey@icloud.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
