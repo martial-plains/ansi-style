@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/a-isaiahharvey/ansi-style/actions/workflows/ci.yml/badge.svg)](https://github.com/a-isaiahharvey/ansi-style/actions/workflows/ci.yml)
 
+[![rust-clippy analyze](https://github.com/a-isaiahharvey/ansi-style/actions/workflows/rust-clippy.yml/badge.svg)](https://github.com/a-isaiahharvey/ansi-style/actions/workflows/rust-clippy.yml)
 > [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles) for styling strings in the terminal 
 
 ## Adding ansi-style as a dependency
