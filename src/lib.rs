@@ -1,4 +1,10 @@
-use std::fmt::Display;
+#![no_std]
+
+extern crate alloc;
+
+use core::fmt::Display;
+
+use alloc::{format, string::String};
 
 /// A helper struct for creating the [`Style`] object
 pub struct StyleBuilder {
@@ -371,13 +377,12 @@ impl Style {
                 return 231;
             }
 
-            return ((((red as f32 - 8.) / 247.) * 24.) + 232.).round() as u8;
+            return ((((red as f32 - 8.) / 247.) * 24.) + 232.) as u8;
         }
 
         (16. + (36. * (red as f32 / 255. * 5.))
             + (6. * (green as f32 / 255. * 5.))
-            + (blue as f32 / 255. * 5.))
-            .round() as u8
+            + (blue as f32 / 255. * 5.)) as u8
     }
 
     pub fn stylize(&self, text: &str) -> String {
@@ -394,7 +399,7 @@ impl Style {
 }
 
 impl Display for Style {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         if self.is_default() {
             return Ok(());
         }
@@ -515,7 +520,7 @@ impl Color {
 }
 
 impl Display for Color {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
             Color::Any => write!(f, ""),
             Color::Black => write!(f, "30"),
@@ -578,7 +583,7 @@ impl BGColor {
 }
 
 impl Display for BGColor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
             BGColor::Any => write!(f, ""),
             BGColor::Black => write!(f, "40"),
