@@ -50,6 +50,7 @@ pub struct StyleBuilder {
 
 impl StyleBuilder {
     /// Creates a new [`StyleBuilder`] struct for creating styles
+    #[must_use]
     pub fn new() -> Self {
         Self {
             bold: false,
@@ -67,246 +68,287 @@ impl StyleBuilder {
     }
 
     /// Sets the `bold` property to true
+    #[must_use]
     pub fn bold(mut self) -> Self {
         self.bold = true;
         self
     }
 
     /// Sets the `dim` property to true
+    #[must_use]
     pub fn dim(mut self) -> Self {
         self.dim = true;
         self
     }
 
     /// Sets the `italic` property to true
+    #[must_use]
     pub fn italic(mut self) -> Self {
         self.italic = true;
         self
     }
 
     /// Sets the `underline` property to true
+    #[must_use]
     pub fn underline(mut self) -> Self {
         self.underline = true;
         self
     }
 
     /// Sets the `blink` property to true
+    #[must_use]
     pub fn blink(mut self) -> Self {
         self.blink = true;
         self
     }
 
     /// Sets the `inverse` property to true
+    #[must_use]
     pub fn inverse(mut self) -> Self {
         self.inverse = true;
         self
     }
 
     /// Sets the `hidden` property to true
+    #[must_use]
     pub fn hidden(mut self) -> Self {
         self.hidden = true;
         self
     }
 
     /// Sets the `strikethrough` property to true
+    #[must_use]
     pub fn strikethrough(mut self) -> Self {
         self.strikethrough = true;
         self
     }
 
     /// Sets the `overline` property to true
+    #[must_use]
     pub fn overline(mut self) -> Self {
         self.overline = true;
         self
     }
 
     /// Sets the text color to black
+    #[must_use]
     pub fn black(mut self) -> Self {
         self.color = Some(Color::Black);
         self
     }
 
     /// Sets the text color to red
+    #[must_use]
     pub fn red(mut self) -> Self {
         self.color = Some(Color::Red);
         self
     }
 
     /// Sets the text color to green
+    #[must_use]
     pub fn green(mut self) -> Self {
         self.color = Some(Color::Green);
         self
     }
 
     /// Sets the text color to yellow
+    #[must_use]
     pub fn yellow(mut self) -> Self {
         self.color = Some(Color::Yellow);
         self
     }
 
     /// Sets the text color to blue
+    #[must_use]
     pub fn blue(mut self) -> Self {
         self.color = Some(Color::Blue);
         self
     }
 
     /// Sets the text color to magenta
+    #[must_use]
     pub fn magenta(mut self) -> Self {
         self.color = Some(Color::Magenta);
         self
     }
 
     /// Sets the text color to cyan
+    #[must_use]
     pub fn cyan(mut self) -> Self {
         self.color = Some(Color::Cyan);
         self
     }
 
     /// Sets the text color to white
+    #[must_use]
     pub fn white(mut self) -> Self {
         self.color = Some(Color::White);
         self
     }
 
     /// Sets the text color to a bright black (gray)
+    #[must_use]
     pub fn black_bright(mut self) -> Self {
         self.color = Some(Color::BlackBright);
         self
     }
 
     /// Sets the text color to a bright red
+    #[must_use]
     pub fn red_bright(mut self) -> Self {
         self.color = Some(Color::RedBright);
         self
     }
 
     /// Sets the text color to a bright green
+    #[must_use]
     pub fn green_bright(mut self) -> Self {
         self.color = Some(Color::GreenBright);
         self
     }
 
     /// Sets the text color to a bright yellow
+    #[must_use]
     pub fn yellow_bright(mut self) -> Self {
         self.color = Some(Color::YellowBright);
         self
     }
 
     /// Sets the text color to a bright blue
+    #[must_use]
     pub fn blue_bright(mut self) -> Self {
         self.color = Some(Color::BlueBright);
         self
     }
 
     /// Sets the text color to a bright magenta
+    #[must_use]
     pub fn magenta_bright(mut self) -> Self {
         self.color = Some(Color::MagentaBright);
         self
     }
 
     /// Sets the text color to a bright cyan
+    #[must_use]
     pub fn cyan_bright(mut self) -> Self {
         self.color = Some(Color::CyanBright);
         self
     }
 
     /// Sets the text color to a bright white
+    #[must_use]
     pub fn white_bright(mut self) -> Self {
         self.color = Some(Color::WhiteBright);
         self
     }
 
     /// Sets the text's bckground color to black
+    #[must_use]
     pub fn bg_black(mut self) -> Self {
         self.bg_color = Some(BGColor::Black);
         self
     }
 
     /// Sets the text's bckground color to red
+    #[must_use]
     pub fn bg_red(mut self) -> Self {
         self.bg_color = Some(BGColor::Red);
         self
     }
 
     /// Sets the text's bckground color to green
+    #[must_use]
     pub fn bg_green(mut self) -> Self {
         self.bg_color = Some(BGColor::Green);
         self
     }
 
     /// Sets the text's bckground color to yellow
+    #[must_use]
     pub fn bg_yellow(mut self) -> Self {
         self.bg_color = Some(BGColor::Yellow);
         self
     }
 
     /// Sets the text's bckground color to blue
+    #[must_use]
     pub fn bg_blue(mut self) -> Self {
         self.bg_color = Some(BGColor::Blue);
         self
     }
 
     /// Sets the text's bckground color to magenta
+    #[must_use]
     pub fn bg_magenta(mut self) -> Self {
         self.bg_color = Some(BGColor::Magenta);
         self
     }
 
     /// Sets the text's bckground color to cyan
+    #[must_use]
     pub fn bg_cyan(mut self) -> Self {
         self.bg_color = Some(BGColor::Cyan);
         self
     }
 
     /// Sets the text's bckground color to white
+    #[must_use]
     pub fn bg_white(mut self) -> Self {
         self.bg_color = Some(BGColor::White);
         self
     }
 
     /// Sets the text's bckground color to a bright black (gray)
+    #[must_use]
     pub fn bg_black_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::BlackBright);
         self
     }
 
     /// Sets the text's bckground color to a bright red
+    #[must_use]
     pub fn bg_red_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::RedBright);
         self
     }
 
     /// Sets the text's bckground color to a bright green
+    #[must_use]
     pub fn bg_green_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::GreenBright);
         self
     }
 
     /// Sets the text's bckground color to a bright yellow
+    #[must_use]
     pub fn bg_yellow_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::YellowBright);
         self
     }
 
     /// Sets the text's bckground color to a bright blue
+    #[must_use]
     pub fn bg_blue_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::BlueBright);
         self
     }
 
     /// Sets the text's bckground color to a bright magenta
+    #[must_use]
     pub fn bg_magenta_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::MagentaBright);
         self
     }
 
     /// Sets the text's bckground color to a bright cyan
+    #[must_use]
     pub fn bg_cyan_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::CyanBright);
         self
     }
 
     /// Sets the text's bckground color to a bright white
+    #[must_use]
     pub fn bg_white_bright(mut self) -> Self {
         self.bg_color = Some(BGColor::WhiteBright);
         self
@@ -314,6 +356,7 @@ impl StyleBuilder {
 
     /// Builds a [`Style`] struct from a the current instance of
     /// the [`StyleBuilder`] struct
+    #[must_use]
     pub fn build(self) -> Style {
         let StyleBuilder {
             bold,
@@ -369,6 +412,7 @@ pub struct Style {
 
 impl Style {
     /// Creates a new [`Style`] struct
+    #[must_use]
     pub fn new() -> Self {
         Self {
             bold: false,
@@ -386,57 +430,68 @@ impl Style {
     }
 
     /// Creates a new [`StyleBuilder`] struct
+    #[must_use]
     pub fn builder() -> StyleBuilder {
         StyleBuilder::new()
     }
 
     /// Checks whether or not the text's style is bold
+    #[must_use]
     pub fn bold(&self) -> bool {
         self.bold
     }
 
     /// Checks whether or not the text's style is dim
+    #[must_use]
     pub fn dim(&self) -> bool {
         self.dim
     }
 
     /// Checks whether or not the text's style is italic
+    #[must_use]
     pub fn italic(&self) -> bool {
         self.italic
     }
 
     /// Checks whether or not the text's style is underline
+    #[must_use]
     pub fn underline(&self) -> bool {
         self.underline
     }
 
     /// Checks whether or not the text's style is blink
+    #[must_use]
     pub fn blink(&self) -> bool {
         self.blink
     }
 
     /// Checks whether or not the text's style is inverse
+    #[must_use]
     pub fn inverse(&self) -> bool {
         self.inverse
     }
 
     /// Checks whether or not the text's style is hidden
+    #[must_use]
     pub fn hidden(&self) -> bool {
         self.hidden
     }
 
     /// Checks whether or not the text's style is strikethrough
+    #[must_use]
     pub fn strikethrough(&self) -> bool {
         self.strikethrough
     }
 
     /// Checks whether or not the text's style is overline
+    #[must_use]
     pub fn overline(&self) -> bool {
         self.overline
     }
 
     /// Checks whether oor not the current style has a text color if no color is
     /// provided a default color [`Color::Any`] will be provided
+    #[must_use]
     pub fn color(&self) -> Color {
         match self.color {
             Some(color) => color,
@@ -446,6 +501,7 @@ impl Style {
 
     /// Checks whether oor not the current style has a text background color if no color is
     /// provided a default color [`BGColor::Any`] will be provided
+    #[must_use]
     pub fn bg_color(&self) -> BGColor {
         match self.bg_color {
             Some(color) => color,
@@ -460,6 +516,7 @@ impl Style {
     /// * `red` - a number representation for red
     /// * `green` - a number representation for green
     /// * `blue` - a number representation for blue
+    #[must_use]
     pub fn rgb_to_ansi256(red: u8, green: u8, blue: u8) -> u8 {
         if red == green && green == blue {
             if red < 8 {
@@ -481,6 +538,7 @@ impl Style {
     /// Adds style to a given text
     ///
     /// * `text` - the string of characters to add style to  
+    #[must_use]
     pub fn stylize(&self, text: &str) -> String {
         format!("{self}{text}{}", Self::reset())
     }
@@ -515,56 +573,56 @@ impl Display for Style {
             };
 
             if self.bold {
-                write_char('1')?
+                write_char('1')?;
             }
 
             if self.dim {
-                write_char('2')?
+                write_char('2')?;
             }
 
             if self.italic {
-                write_char('3')?
+                write_char('3')?;
             }
 
             if self.underline {
-                write_char('4')?
+                write_char('4')?;
             }
 
             if self.blink {
-                write_char('5')?
+                write_char('5')?;
             }
 
             if self.inverse {
-                write_char('7')?
+                write_char('7')?;
             }
 
             if self.hidden {
-                write_char('8')?
+                write_char('8')?;
             }
 
             if self.strikethrough {
-                write_char('9')?
+                write_char('9')?;
             }
 
             if self.overline {
-                write!(f, "53")?
+                write!(f, "53")?;
             }
         }
 
         if let Some(color) = self.bg_color {
             if written {
-                write!(f, ";{}", color)?;
+                write!(f, ";{color}")?;
             } else {
-                write!(f, "{}", color)?;
+                write!(f, "{color}")?;
                 written = true;
             }
         }
 
         if let Some(color) = self.color {
             if written {
-                write!(f, ";{}", color)?;
+                write!(f, ";{color}")?;
             } else {
-                write!(f, "{}", color)?;
+                write!(f, "{color}")?;
             }
         }
 
@@ -626,18 +684,21 @@ pub enum Color {
 
 impl Color {
     /// Closes the terminal from adding selected color to text
+    #[must_use]
     pub fn close(&self) -> &'static str {
         "\x1B[39m"
     }
 
     /// Opens the terminal for adding selected color to text
+    #[must_use]
     pub fn open(&self) -> String {
-        format!("\x1B[{}m", self)
+        format!("\x1B[{self}m")
     }
 
     /// Adds color to a given text
     ///
     /// * `text` - the string of characters to add background color to  
+    #[must_use]
     pub fn paint(&self, text: &str) -> String {
         format!("{}{text}{}", self.open(), self.close())
     }
@@ -717,18 +778,21 @@ pub enum BGColor {
 
 impl BGColor {
     /// Closes the terminal from adding selected color to text's background
+    #[must_use]
     pub fn close(&self) -> &'static str {
         "\x1B[49m"
     }
 
     /// Opens the terminal to adding selected color to text's background
+    #[must_use]
     pub fn open(&self) -> String {
-        format!("\x1B[{}m", self)
+        format!("\x1B[{self}m")
     }
 
     /// Adds background color to a given text
     ///
     /// * `text` - the string of characters to add color to  
+    #[must_use]
     pub fn paint(&self, text: &str) -> String {
         format!("{}{text}{}", self.open(), self.close())
     }
