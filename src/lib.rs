@@ -478,7 +478,7 @@ impl Style {
             + (blue as f32 / 255. * 5.)) as u8
     }
 
-    /// Adds style to a given to a given text
+    /// Adds style to a given text
     ///
     /// * `text` - the string of characters to add style to  
     pub fn stylize(&self, text: &str) -> String {
@@ -634,6 +634,13 @@ impl Color {
     pub fn open(&self) -> String {
         format!("\x1B[{}m", self)
     }
+
+    /// Adds color to a given text
+    ///
+    /// * `text` - the string of characters to add background color to  
+    pub fn paint(&self, text: &str) -> String {
+        format!("{}{text}{}", self.open(), self.close())
+    }
 }
 
 impl Display for Color {
@@ -717,6 +724,13 @@ impl BGColor {
     /// Opens the terminal to adding selected color to text's background
     pub fn open(&self) -> String {
         format!("\x1B[{}m", self)
+    }
+
+    /// Adds background color to a given text
+    ///
+    /// * `text` - the string of characters to add color to  
+    pub fn paint(&self, text: &str) -> String {
+        format!("{}{text}{}", self.open(), self.close())
     }
 }
 

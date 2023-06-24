@@ -9,7 +9,7 @@
 
 ```toml
 [dependencies]
-ansi-style = "1.1.0"
+ansi-style = "1.2.0"
 ```
 
 ## Usage

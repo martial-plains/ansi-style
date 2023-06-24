@@ -15,8 +15,7 @@ fn main() {
 
     let style = Style::builder().red().strikethrough().build();
 
-    println!(
-        "{}",
-        style.stylize("Hello World in red with strikethrough")
-    )
+    println!("{}", style.stylize("Hello World in red with strikethrough"));
+
+    println!("This is in red: {}", Color::Red.paint("a red string"));
 }
